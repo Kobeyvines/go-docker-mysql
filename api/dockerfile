@@ -1,5 +1,5 @@
 #use golang basic image
-FROM golang:1.18-alpine
+FROM golang:latest
 
 #set the working directory inside the container
 WORKDIR /usr/src/app 
