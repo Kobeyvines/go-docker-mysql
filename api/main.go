@@ -35,7 +35,7 @@ log.Fatal(http.LinsenandServe(":8080", nil))
 func addmessage(w http.ResponseWriter, r *http.Request) {
 	content := r.URL.Query().GET("content")
 	if content == ""{
-		http.Error(w."Content is required", http.StatusBadRequest)
+		http.Error(w, "Content is required", http.StatusBadRequest)
 		return
 	}
 
@@ -74,7 +74,7 @@ func displayMessages(w http.ResponseWriter, r *http.Request){
 	}
 	if err := rows.Err(); err != nil {
 		http.Error(w, "Error iterating over rows", http.StatusInternalServerError)
-		log.printf("row iteration error:%v" err)
+		log.printf("row iteration error:%v", err)
 		return
 	}
 
